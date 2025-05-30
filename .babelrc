@@ -1,7 +1,8 @@
 {
   "presets": [
     "@babel/preset-react",
-    "@babel/preset-env"
+    "@babel/preset-env",
+    "@babel/preset-typescript"
   ],
   "env": {
     "production": {
@@ -45,7 +46,8 @@
       ],
       "presets": [
         "@babel/preset-env",
-        "@babel/preset-react"
+        "@babel/preset-react",
+        "@babel/preset-typescript"
       ]
     },
     "development": {
@@ -60,7 +62,8 @@
             "development": true,
             "runtime": "automatic"
           }
-        ]
+        ],
+        "@babel/preset-typescript"
       ]
     },
     "test": {
@@ -71,7 +74,8 @@
           {
             "runtime": "automatic"
           }
-        ]
+        ],
+        "@babel/preset-typescript"
       ],
       "plugins": [
         "babel-plugin-styled-components"
