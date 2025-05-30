@@ -35,7 +35,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'], // <-- Add TS/TSX support
     modules: [
       'client',
       'node_modules',
@@ -92,7 +92,7 @@ module.exports = {
       ]
     },
     {
-      test: /\.jsx?$/,
+      test: /\.[jt]sx?$/,
       exclude: /node_modules/,
       use: 'babel-loader'
     },

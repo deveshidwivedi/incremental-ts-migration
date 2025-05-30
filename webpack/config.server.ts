@@ -3,12 +3,15 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-
   entry: {
-    server:
-      ['regenerator-runtime/runtime', path.resolve(__dirname, '../server/server.js')],
-    previewServer:
-      ['regenerator-runtime/runtime', path.resolve(__dirname, '../server/previewServer.js')],
+    server: [
+      'regenerator-runtime/runtime',
+      path.resolve(__dirname, '../server/server.ts'), // use .ts if migrate previewServer
+    ],
+    previewServer: [
+      'regenerator-runtime/runtime',
+      path.resolve(__dirname, '../server/previewServer.ts'), // use .ts if migrate previewServer
+    ],
   },
   output: {
     path: path.resolve(__dirname, '../dist/'),
@@ -25,7 +28,7 @@ module.exports = {
   externals: [nodeExternals()],
 
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     modules: [
       'client',
       'node_modules',
@@ -35,13 +38,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           babelrc: true
         }
-      }, {
+      },
+      {
         test: /\.json$/,
         loader: 'json-loader',
       },

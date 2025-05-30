@@ -14,7 +14,7 @@ module.exports = [{
   externals: [nodeExternals()],
 
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     modules: [
       'client',
       'node_modules',
@@ -24,7 +24,7 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
@@ -47,7 +47,7 @@ module.exports = [{
   externals: [nodeExternals()],
 
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     modules: [
       'client',
       'node_modules',
@@ -57,7 +57,7 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
@@ -80,7 +80,7 @@ module.exports = [{
   externals: [nodeExternals()],
 
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     modules: [
       'client',
       'node_modules',
@@ -90,7 +90,7 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
